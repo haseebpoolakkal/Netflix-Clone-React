@@ -2,9 +2,7 @@ import React from 'react'
 
 const NoPage = () => {
   return (
-    <>
-    <h1>Page Not Found</h1>
-    </>
+    <div>Issue with routing. Go to Home</div>
   )
 }
 

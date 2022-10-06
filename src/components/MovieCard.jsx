@@ -1,21 +1,27 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './MovieCard.css'
+import "./MovieCard.css";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = (props) => {
   return (
     <>
       <Col>
-        <Link to={`/movie/${movie.name}`}>
-          <Card
-            className="bg-dark text-white movie-card"
-          >
-            <Card.Img variant="top" src={movie.poster} />
+        <Link to={`/movie/${props.movie.name}`}>
+          <Card bg="dark">
+            <Card.Header>
+              <Card.Img
+                className="image"
+                variant="top"
+                src={props.movie.poster}
+              />
+            </Card.Header>
             <Card.Body>
-              <Card.Title>{movie.name}</Card.Title>
-              <Card.Subtitle>Year : {movie.yearOfRelease}</Card.Subtitle>
-              <Card.Text>Director : {movie.directorName}</Card.Text>
+              <Card.Text>Movie Name: {props.movie.name}</Card.Text>
+              <Card.Text>Director Name: {props.movie.directorName}</Card.Text>
+              <Card.Text>
+                Year of Release: {props.movie.yearOfRelease}
+              </Card.Text>
             </Card.Body>
           </Card>
         </Link>

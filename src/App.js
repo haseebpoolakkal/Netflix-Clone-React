@@ -1,23 +1,21 @@
-import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Movie from './components/Movie';
-import Admin from './pages/Admin';
+import './App.css';
 import Layout from './pages/Layout';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './pages/Home';
+import Admin from './pages/Admin';
 import NoPage from './pages/NoPage';
-import SingleMovie from './pages/SingleMovie';
+import SelectedMovie from './pages/SelectedMovie';
 
 function App() {
   return (
     <>
-      <div className="App-header">
+      <div className='bg'>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path='movie' element={<Movie />} />
-            <Route path='admin' element={<Admin />} />
-            <Route path='movie/:movieName' element={<SingleMovie />} />
+            <Route path='/admin' element={<Admin />} />
+            <Route path='/movie/:movieName' element={<SelectedMovie />} />
             <Route path='*' element={<NoPage />} />
           </Route>
         </Routes>
